@@ -1,7 +1,7 @@
 import json
 
 #Open and load JSON file
-infile = open('US_fires_9_1.json','r')
+infile = open('US_fires_9_1_data.json','r')
 fires = json.load(infile)
 
 
@@ -29,4 +29,4 @@ data = {
 }
 mylayout = Layout(title='US Fires: 9/1/2020 through 9/13/2020')
 fig = {'data':data, 'layout':mylayout}
-offline.plot(fig, filename='US_fires_9_1.html')
+offline.plot(fig, filename='US_fires_9_1_plot.html')
