@@ -1,17 +1,17 @@
 import json
 
-#Open and load JSON file
+# Open and load JSON file
 infile = open('US_fires_9_1_data.json','r')
 fires = json.load(infile)
 
 
-#Get brighness, longitude and lattitude of fires using list comprehension
+# Get brighness, longitude and lattitude of fires using list comprehension
 brights = [fires[index]['brightness'] for index,item in enumerate(fires) if fires[index]['brightness'] > 450]
 lons = [fires[index]['longitude'] for index,item in enumerate(fires) if fires[index]['brightness'] > 450]
 lats = [fires[index]['latitude'] for index,item in enumerate(fires) if fires[index]['brightness'] > 450]
 
 
-#Create offline geoplot to visualize fires
+# Create offline geoplot to visualize fires
 from plotly.graph_objects import Scattergeo, Layout
 from plotly import offline
 
